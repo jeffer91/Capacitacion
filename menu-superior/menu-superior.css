@@ -1,0 +1,100 @@
+/* =========================================================
+Nombre completo: menu-superior.css
+Ubicación: /menu-superior/menu-superior.css
+Función:
+- Estilizar la barra superior.
+- Ordenar estado, acciones rápidas y alertas.
+========================================================= */
+.topbar {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) auto auto;
+  align-items: center;
+  gap: 18px;
+}
+
+.topbar-heading {
+  min-width: 0;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.topbar-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.topbar-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: var(--panel-soft);
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.status-pill.ready {
+  color: var(--success);
+  border-color: rgba(21, 115, 71, 0.25);
+  background: rgba(21, 115, 71, 0.08);
+}
+
+.topbar-button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.topbar-button:hover:not(:disabled) {
+  border-color: rgba(31, 94, 255, 0.35);
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.topbar-button:disabled {
+  cursor: not-allowed;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+@media (max-width: 1100px) {
+  .topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar-meta,
+  .topbar-actions {
+    justify-content: flex-start;
+  }
+}
