@@ -1,13 +1,13 @@
 {
   "name": "capacitacion-docente",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Aplicación Electron para gestionar el proceso de capacitación docente, base local y generación de reportes institucionales.",
   "main": "electron/main.js",
   "private": true,
   "scripts": {
     "start": "electron .",
     "dev": "electron .",
-    "check": "node --check app.js && node --check electron/main.js && node --check electron/preload.js && node --check electron/electron.ipc.js"
+    "check": "node --check app.js && node --check electron/main.js && node --check electron/preload.js && node --check electron/electron.ipc.js && node --check menu/menu.config.js && node --check menu/menu.router.js && node --check menu/menu.js && node --check menu-superior/menu-superior.estado.js && node --check menu-superior/menu-superior.acciones.js && node --check menu-superior/menu-superior.js"
   },
   "keywords": [
     "electron",
