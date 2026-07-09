@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Capacitación Docente</title>
   <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="menu/menu.css" />
+  <link rel="stylesheet" href="menu-superior/menu-superior.css" />
 </head>
 <body>
   <div id="app" class="app-shell">
-    <aside class="app-sidebar" aria-label="Menú principal">
+    <aside id="menu-root" class="app-sidebar" aria-label="Menú principal">
       <div class="brand-block">
         <div class="brand-mark">UGPA</div>
         <div>
@@ -17,51 +19,30 @@
           <p>Proceso de Capacitación Docente</p>
         </div>
       </div>
-
-      <nav class="main-nav">
-        <button class="nav-item active" data-view="inicio">Inicio</button>
-        <button class="nav-item" data-view="base-local">Base Local</button>
-        <button class="nav-item" data-view="carga-guiada">Carga Guiada</button>
-        <button class="nav-item" data-view="reportes">Generar Reportes</button>
-        <button class="nav-item" data-view="informe-final">Informe Final</button>
-      </nav>
     </aside>
 
     <main class="app-main">
-      <header class="topbar">
-        <div>
-          <span class="eyebrow">Bloque 1</span>
-          <h2 id="screen-title">Base Electron lista</h2>
-        </div>
-        <div class="topbar-actions">
-          <span id="runtime-status" class="status-pill">Inicializando...</span>
+      <header id="menu-superior-root" class="topbar">
+        <div class="topbar-heading">
+          <span class="eyebrow">Bloque 2</span>
+          <h2 id="screen-title">Inicio</h2>
+          <p class="topbar-note">Inicializando menú superior...</p>
         </div>
       </header>
 
-      <section id="screen-content" class="content-card">
-        <h3>Aplicación base creada</h3>
-        <p>
-          Este primer bloque deja funcionando la estructura inicial de Electron. En los siguientes bloques se conectará el menú real, la base local y las pantallas del proceso.
-        </p>
-
-        <div class="grid-cards">
-          <article>
-            <strong>Electron</strong>
-            <span>Ventana principal, preload seguro e IPC preparados.</span>
-          </article>
-          <article>
-            <strong>Proceso</strong>
-            <span>La app queda centrada en Capacitación Docente.</span>
-          </article>
-          <article>
-            <strong>Base Local</strong>
-            <span>Se conectará en el bloque 3 para guardar datos normalizados.</span>
-          </article>
-        </div>
+      <section id="screen-content" class="content-card" aria-live="polite">
+        <h3>Cargando aplicación...</h3>
+        <p>Preparando navegación principal.</p>
       </section>
     </main>
   </div>
 
+  <script src="menu/menu.config.js"></script>
+  <script src="menu/menu.router.js"></script>
+  <script src="menu/menu.js"></script>
+  <script src="menu-superior/menu-superior.estado.js"></script>
+  <script src="menu-superior/menu-superior.acciones.js"></script>
+  <script src="menu-superior/menu-superior.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
