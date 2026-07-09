@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="app.css" />
   <link rel="stylesheet" href="menu/menu.css" />
   <link rel="stylesheet" href="menu-superior/menu-superior.css" />
+  <link rel="stylesheet" href="base-local/baselocal.css" />
 </head>
 <body>
   <div id="app" class="app-shell">
@@ -24,7 +25,7 @@
     <main class="app-main">
       <header id="menu-superior-root" class="topbar">
         <div class="topbar-heading">
-          <span class="eyebrow">Bloque 2</span>
+          <span class="eyebrow">Bloque 3</span>
           <h2 id="screen-title">Inicio</h2>
           <p class="topbar-note">Inicializando menú superior...</p>
         </div>
@@ -37,12 +38,34 @@
     </main>
   </div>
 
+  <script src="shared/constants.js"></script>
+  <script src="shared/utils.js"></script>
+  <script src="shared/fechas.js"></script>
+  <script src="shared/normalizadores.js"></script>
+  <script src="shared/codigos.js"></script>
+  <script src="shared/ui.js"></script>
+  <script src="shared/tablas.js"></script>
+  <script src="shared/filtros.js"></script>
+  <script src="shared/storage.js"></script>
+  <script src="shared/logger.js"></script>
+
   <script src="menu/menu.config.js"></script>
   <script src="menu/menu.router.js"></script>
   <script src="menu/menu.js"></script>
   <script src="menu-superior/menu-superior.estado.js"></script>
   <script src="menu-superior/menu-superior.acciones.js"></script>
   <script src="menu-superior/menu-superior.js"></script>
+
+  <script src="base-local/baselocal.schema.js"></script>
+  <script src="base-local/baselocal.db.js"></script>
+  <script src="base-local/baselocal.seed.js"></script>
+  <script src="base-local/baselocal.search.js"></script>
+  <script src="base-local/baselocal.import.js"></script>
+  <script src="base-local/baselocal.export.js"></script>
+  <script src="base-local/baselocal.backup.js"></script>
+  <script src="base-local/baselocal.view.js"></script>
+  <script src="base-local/baselocal.js"></script>
+
   <script src="app.js"></script>
 </body>
 </html>
