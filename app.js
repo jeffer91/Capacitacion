@@ -3,7 +3,7 @@ Nombre completo: app.js
 Ubicación: /app.js
 Función:
 - Inicializar la interfaz base de la aplicación.
-- Conectar menú principal, router y menú superior.
+- Conectar menú principal, router, menú superior y módulos activos.
 - Verificar si la app corre dentro de Electron.
 ========================================================= */
 (function initCapacitacionApp(window, document) {
@@ -39,6 +39,17 @@ Función:
     return `${appInfo.runtime || 'electron'} listo · v${appInfo.version || config.version}`;
   }
 
+  function mountActiveModule(viewId, estadoManager) {
+    if (viewId === 'base-local' && window.BaseLocalApp) {
+      const root = document.getElementById('baselocal-root');
+      window.BaseLocalApp.mount(root, { estadoManager });
+      const stats = window.BaseLocalApp.getStats();
+      estadoManager.set({
+        ultimaAccion: `Base Local lista: ${stats.docentes} docente(s), ${stats.capacitaciones} capacitación(es), ${stats.documentos} documento(s).`
+      });
+    }
+  }
+
   function boot() {
     assertDependencies();
 
@@ -61,6 +72,8 @@ Función:
           runtime: getRuntimeLabel(),
           ultimaAccion: `Pantalla activa: ${view.title}`
         });
+
+        mountActiveModule(viewId, estadoManager);
       }
     });
 
@@ -72,7 +85,7 @@ Función:
 
     estadoManager.set({
       runtime: getRuntimeLabel(),
-      ultimaAccion: 'Menú principal y menú superior listos.'
+      ultimaAccion: 'Menú principal, menú superior y Base Local listos.'
     });
 
     router.goTo('inicio');
