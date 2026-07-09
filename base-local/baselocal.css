@@ -1,0 +1,242 @@
+/* =========================================================
+Nombre completo: baselocal.css
+Ubicación: /base-local/baselocal.css
+Función:
+- Estilizar la pantalla Base Local.
+- Organizar estadísticas, buscador, tablas y acciones.
+========================================================= */
+.baselocal-layout {
+  display: grid;
+  gap: 18px;
+}
+
+.baselocal-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.baselocal-hero h3 {
+  margin-bottom: 8px;
+}
+
+.baselocal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.primary-button,
+.secondary-button,
+.danger-button {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: var(--panel);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.primary-button {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.secondary-button:hover {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.danger-button {
+  color: #b42318;
+  border-color: rgba(180, 35, 24, 0.25);
+}
+
+.file-button {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.file-button input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.baselocal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.baselocal-meta span {
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.baselocal-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.baselocal-stat {
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 4px;
+}
+
+.baselocal-stat strong {
+  font-size: 26px;
+  color: var(--primary);
+}
+
+.baselocal-stat span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.baselocal-panel {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.baselocal-toolbar {
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-soft);
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 12px;
+  align-items: center;
+}
+
+.baselocal-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.baselocal-tab {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.baselocal-tab.active {
+  color: var(--primary);
+  background: var(--primary-soft);
+  border-color: rgba(31, 94, 255, 0.25);
+  font-weight: 800;
+}
+
+.baselocal-search {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.baselocal-table-target {
+  padding: 14px;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.data-table th {
+  color: var(--muted);
+  background: var(--panel-soft);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.empty-state {
+  padding: 22px;
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  color: var(--muted);
+  text-align: center;
+  background: var(--panel-soft);
+}
+
+.app-toast {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 1000;
+  background: var(--text);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  max-width: 360px;
+}
+
+.app-toast-error {
+  background: #b42318;
+}
+
+@media (max-width: 1100px) {
+  .baselocal-hero,
+  .baselocal-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .baselocal-hero {
+    display: grid;
+  }
+
+  .baselocal-actions {
+    justify-content: flex-start;
+  }
+
+  .baselocal-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .baselocal-stats {
+    grid-template-columns: 1fr;
+  }
+}
