@@ -12,8 +12,8 @@ Función:
   window.CapacitacionMenuConfig = {
     appName: 'Capacitación Docente',
     processName: 'Proceso de Capacitación Docente',
-    activeBlock: 'Bloque 2',
-    version: '0.2.0',
+    activeBlock: 'Bloque 3',
+    version: '0.3.0',
     items: [
       {
         id: 'inicio',
@@ -31,7 +31,7 @@ Función:
         id: 'base-local',
         label: 'Base Local',
         description: 'Consulta de datos normalizados',
-        status: 'pendiente'
+        status: 'activo'
       },
       {
         id: 'carga-guiada',
