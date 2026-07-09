@@ -12,16 +12,16 @@ Función:
   const views = {
     inicio: {
       title: 'Inicio',
-      subtitle: 'Bloque 2',
+      subtitle: 'Bloque 3',
       html: `
-        <h3>Menú y menú superior conectados</h3>
+        <h3>Base Local conectada</h3>
         <p>
-          Este bloque organiza la navegación de la aplicación. Ahora el menú principal y la barra superior trabajan como módulos separados.
+          Este bloque incorpora la Base Local para guardar datos normalizados del proceso de capacitación docente.
         </p>
         <div class="grid-cards">
           <article><strong>Menú principal</strong><span>Controla las pantallas centrales de la app.</span></article>
-          <article><strong>Menú superior</strong><span>Muestra pantalla activa, estado y acciones rápidas.</span></article>
-          <article><strong>Ruta preparada</strong><span>El siguiente bloque conectará la Base Local.</span></article>
+          <article><strong>Base Local</strong><span>Guarda datos limpios y metadatos de carga.</span></article>
+          <article><strong>Siguiente ruta</strong><span>El próximo bloque será la pantalla del proceso.</span></article>
         </div>
       `
     },
@@ -43,13 +43,8 @@ Función:
     },
     'base-local': {
       title: 'Base Local',
-      subtitle: 'Pendiente Bloque 3',
-      html: `
-        <h3>Base Local</h3>
-        <p>
-          En el Bloque 3 se creará la base para guardar datos normalizados, buscar información y alimentar los reportes.
-        </p>
-      `
+      subtitle: 'Bloque 3',
+      html: `<div id="baselocal-root"></div>`
     },
     'carga-guiada': {
       title: 'Carga Guiada',
@@ -107,6 +102,9 @@ Función:
       titleNode.textContent = view.title;
       contentNode.innerHTML = view.html;
       onChange(viewId, view);
+      window.dispatchEvent(new CustomEvent('capacitacion:view-changed', {
+        detail: { viewId, view }
+      }));
       return view;
     }
 
