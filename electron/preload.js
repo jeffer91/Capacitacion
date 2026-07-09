@@ -10,7 +10,7 @@ const { contextBridge, ipcRenderer } = require('electron');
 contextBridge.exposeInMainWorld('CapacitacionElectron', {
   getAppInfo: () => ({
     name: 'Capacitación Docente',
-    version: '0.1.0',
+    version: '0.2.0',
     runtime: 'electron'
   }),
 
